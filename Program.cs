@@ -13,7 +13,6 @@ namespace SecondTaskProject
             var userService = new UserService();
             var quizService = new QuizService();
 
-            // Пример добавления викторин
             quizService.AddQuiz(new Quiz
             {
                 Name = "История",
@@ -196,11 +195,9 @@ namespace SecondTaskProject
 
         static bool AreAnswersCorrect(List<int> userAnswers, List<int> correctAnswers)
         {
-            // Проверяем, совпадает ли количество ответов
             if (userAnswers.Count != correctAnswers.Count)
                 return false;
 
-            // Проверяем, совпадают ли все элементы, независимо от порядка
             return !correctAnswers.Except(userAnswers).Any() && !userAnswers.Except(correctAnswers).Any();
         }
     }
